@@ -1,0 +1,212 @@
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {text-decoration: none}
+
+/* Hero
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hero {
+  margin-top:180px;
+  } /* this should  the height of the navigation so the content is not hidden under the fixed nav*/
+
+
+
+  /* Navigation layout
+  ------------------------------*/
+
+  nav .nav {
+    position:fixed;
+    z-index:1;
+    background-color: lightgray;
+    top:0;
+    padding:35px 0;
+     /*make sure to update the openNav padding and the hero attributes aw well */
+  }
+
+  nav .nav.shrinkNav {
+    padding:5px 0 !important;
+    background-color: gray !important;
+    transition: all 0.5s;
+  }
+  nav .nav.openNav {
+    padding:35px 0 !important;
+    transition: padding 0.5s;
+  }
+
+
+  nav .mobile-menu {
+    position:fixed;
+    top:0;
+    margin-left:-250px;
+    background-color: white;
+    width:250px;
+    height:100%;
+  }
+
+  .moveYourBody {
+    animation-name: moveYourBody;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    overflow-x: hidden;
+    width:100%
+  }
+  .moveYourBodyOff {
+    animation-name: moveYourBodyOff;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    overflow-x: hidden;
+    width:100%
+  }
+  .overlay {
+    position: fixed;
+    top:0;
+    z-index: 2;
+    width:100%;
+    height:100%;
+    background-color: gray;
+    display:none;
+    opacity:0
+  }
+
+  .overlayDisplay {
+    animation-name: overlay;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    display:inline-block;
+  }
+  .overlayDisplayOff {
+    animation-name: overlayOff;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+
+  /* Navigation dropdown
+  --------------------------------*/
+
+
+  nav .nav-items #NavigationSideBar ul  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*padding: 0 0 0 10px;*/
+  }
+
+  nav .nav-items #NavigationSideBar ul li {
+    display: inline-table;
+    margin: 10px;
+  }
+
+  nav .nav-items #NavigationSideBar ul li ul {
+    display: none;
+    white-space: nowrap;
+    padding: 5px 5px 5px 5px;
+
+    border: 1px solid #bebebe;
+    border-bottom: 1px solid #b9b9b9;
+    background: #fff;
+    /*width: 250px;*/
+
+    position: absolute;
+    margin: 0px 0 0 -50px;
+  }
+
+  nav .nav-items #NavigationSideBar ul li:hover ul {
+
+    display: block;
+
+  }
+
+  nav .nav-items #NavigationSideBar ul li ul li {
+    display: block;
+    padding: 10px;
+    height:40px;
+    margin: 0
+  }
+
+
+
+
+/* Mobile navigation tree
+---------------------------------------*/
+.mobile-menu .nav-items #NavigationSideBarMobile ul {
+    list-style-type: none;
+    padding:15px;
+}
+
+.mobile-menu .nav-items #NavigationSideBarMobile ul li {
+
+  width: 100%;
+}
+.mobile-menu .nav-items #NavigationSideBarMobile ul li ul {
+  margin: 0;
+}
+
+
+
+  /*  mobile
+  ------------------------------*/
+  @media (min-width: 100px) {
+
+    nav .nav-items #NavigationSideBar {
+      display:none
+    }
+    nav .hamburger {
+      display:block;
+      padding: 0 10px 0 0;
+    }
+  }
+
+
+  /* Larger than tablet */
+  @media (min-width: 750px) {
+
+    nav .nav-items #NavigationSideBar {
+      display:inline-block
+    }
+    nav .hamburger  {
+      display:none
+    }
+    .overlayDisplay {
+      animation-name: none;
+    }
+    .moveYourBody {
+      animation-fill-mode: initial;
+      -ms-animation-fill-mode: backwards;
+      animation-name: none;
+    }
+  }
+
+
+
+  /* Animations
+  ------------------------------*/
+
+
+  @keyframes moveYourBody {
+    from {margin-left: 0;}
+    to {margin-left: 250px;}
+
+  }
+
+  @keyframes moveYourBodyOff {
+    from {margin-left: 250px;}
+    to {margin-left: 0;}
+
+  }
+
+  @keyframes overlay {
+    from {opacity: 0;}
+    to {opacity: 0.6;}
+
+  }
+  @keyframes overlayOff {
+    from {opacity: 0.6;}
+    to {opacity: 0;}
+
+  }
