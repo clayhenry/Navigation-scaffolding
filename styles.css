@@ -173,6 +173,7 @@ a {text-decoration: none}
     }
     .overlayDisplay {
       animation-name: none;
+      display:none;
     }
     .moveYourBody {
       animation-fill-mode: initial;
