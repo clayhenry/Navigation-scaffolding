@@ -5,8 +5,24 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
 a {text-decoration: none}
+
+
+.button {
+  border-radius: 100px;
+}
+
+
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.section {
+  padding: 8rem 0 7rem;
+  text-align: center;
+}
+.section-heading,
+.section-description {
+  margin-bottom: 1.2rem;
+}
 
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -14,6 +30,56 @@ a {text-decoration: none}
   margin-top:180px;
   } /* this should  the height of the navigation so the content is not hidden under the fixed nav*/
 
+
+
+  .phones {
+    position: relative;
+  }
+  .phone {
+    position: relative;
+    max-width: 80%;
+    margin: 3rem auto -12rem;
+  }
+  .phone + .phone {
+    display: none;
+  }
+
+  /* Values
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .values {
+    background-image: url('/Frontend/Images/ciraMedical/values-bg.jpg');
+    background-size: cover;
+    color: #fff;
+    padding-bottom: 5rem;
+  }
+  .value-multiplier {
+    margin-bottom: .5rem;
+    color: #11DFC7;
+  }
+  .value-heading {
+    margin-bottom: .3rem;
+  }
+  .value-description {
+    opacity: .8;
+    font-weight: 300;
+  }
+
+  /* Help
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .get-help {
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Categories
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .categories {
+    background-image: url('/Frontend/Images/ciraMedical/values-bg.jpg');
+    background-size: cover;
+    color: #fff;
+  }
+  .categories .section-description {
+    margin-bottom: 4rem;
+  }
 
 
   /* Navigation layout
@@ -25,18 +91,21 @@ a {text-decoration: none}
     background-color: lightgray;
     top:0;
     padding:35px 0;
-     /*make sure to update the openNav padding and the hero attributes aw well */
+    transition: all 0.3s;
+
+    /*make sure to update the openNav padding and the hero attributes as well */
   }
 
   nav .nav.shrinkNav {
     padding:5px 0 !important;
     background-color: gray !important;
-    transition: all 0.5s;
+    transition: all 0.3s;
   }
   nav .nav.openNav {
     padding:35px 0 !important;
-    transition: padding 0.5s;
+    transition: all 0.3s;
   }
+
 
 
   nav .mobile-menu {
@@ -48,6 +117,54 @@ a {text-decoration: none}
     height:100%;
   }
 
+
+
+  .search-bar {
+    padding:10px 50px;
+    background-color:white;
+    height:80px;
+    margin:0;
+    position:fixed;
+    top:0;
+    z-index:1
+  }
+  .search-bar input[type='text']{
+    width:100%;
+    height:60px;
+    border:0;
+    background-color: #f9f9f9;
+    font-size:22px;
+  }
+  .searchButton.service_brn {
+    display:none;
+  }
+
+
+  .overlay {
+    position: fixed;
+    z-index: 2;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: gray;
+    visibility: hidden;
+  }
+
+
+  /* Transitional elements
+  ------------------------------*/
+  .content {
+    transition:all 0.3s;
+  }
+
+
+  nav .nav.moveNavVertically {
+
+    top:80px;
+    transition: all 0.3s;
+  }
+
+
   .moveYourBody {
     animation-name: moveYourBody;
     animation-duration: 0.3s;
@@ -55,6 +172,15 @@ a {text-decoration: none}
     overflow-x: hidden;
     width:100%
   }
+
+  .verticalBody{
+
+    padding-top:80px;
+    transition: padding-top 0.3s;
+
+  }
+
+
   .moveYourBodyOff {
     animation-name: moveYourBodyOff;
     animation-duration: 0.3s;
@@ -62,27 +188,24 @@ a {text-decoration: none}
     overflow-x: hidden;
     width:100%
   }
-  .overlay {
-    position: fixed;
-    top:0;
-    z-index: 2;
-    width:100%;
-    height:100%;
-    background-color: gray;
-    visibility: hidden;
-  }
 
   .overlayDisplay {
+
+
     animation-name: overlay;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     visibility: visible;
   }
   .overlayDisplayOff {
+
     animation-name: overlayOff;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+
   }
+
+
 
 
   /* Navigation dropdown
@@ -112,7 +235,7 @@ a {text-decoration: none}
     /*width: 250px;*/
 
     position: absolute;
-    margin: 0px 0 0 -50px;
+    margin: 0px 0 0 -1%;
   }
 
   nav .nav-items #NavigationSideBar ul li:hover ul {
@@ -131,20 +254,20 @@ a {text-decoration: none}
 
 
 
-/* Mobile navigation tree
----------------------------------------*/
-.mobile-menu .nav-items #NavigationSideBarMobile ul {
+  /* Mobile navigation tree
+  ---------------------------------------*/
+  .mobile-menu .nav-items #NavigationSideBarMobile ul {
     list-style-type: none;
     padding:15px;
-}
+  }
 
-.mobile-menu .nav-items #NavigationSideBarMobile ul li {
+  .mobile-menu .nav-items #NavigationSideBarMobile ul li {
 
-  width: 100%;
-}
-.mobile-menu .nav-items #NavigationSideBarMobile ul li ul {
-  margin: 0;
-}
+    width: 100%;
+  }
+  .mobile-menu .nav-items #NavigationSideBarMobile ul li ul {
+    margin: 0;
+  }
 
 
 
@@ -183,9 +306,7 @@ a {text-decoration: none}
   }
 
 
-
-  /* Animations
-  ------------------------------*/
+  /* Animations */
 
 
   @keyframes moveYourBody {
@@ -205,6 +326,7 @@ a {text-decoration: none}
     to {opacity: 0.6;}
 
   }
+
   @keyframes overlayOff {
     from {opacity: 0.6; visibility: visible; }
     to { opacity: 0; visibility: hidden;}

@@ -8,13 +8,13 @@ $(document).ready(function(){
   var squishyNav = $('nav .nav ');
   var navHeight = $('.nav').height();
 
-//----Mobile navigation --//
+  //----Mobile navigation --//
   $('nav .hamburger').on('click', function(){
 
-      body.addClass('moveYourBody')
-      body.removeClass('moveYourBodyOff')
-      overlay.addClass('overlayDisplay')
-      overlay.removeClass('overlayDisplayOff')
+    body.addClass('moveYourBody')
+    body.removeClass('moveYourBodyOff')
+    overlay.addClass('overlayDisplay')
+    overlay.removeClass('overlayDisplayOff')
   })
 
   $('.overlay').on('click', function(){
@@ -26,26 +26,19 @@ $(document).ready(function(){
 
   })
 
-//----Shrinking Navigation --//
+  //----Shrinking Navigation --//
   $(window).on('scroll', function(){
 
-      var scrollTop = $(this).scrollTop()
+    var scrollTop = $(this).scrollTop()
 
-        if(navHeight <= scrollTop ){
-          squishyNav.removeClass('openNav')
-            squishyNav.addClass('shrinkNav')
+    if(navHeight <= scrollTop ){
+      squishyNav.addClass('shrinkNav')
+    }
 
-        }
-
-        if( squishyNav.hasClass('shrinkNav') && navHeight >=  scrollTop ){
-
-              squishyNav.removeClass('shrinkNav');
-              squishyNav.addClass('openNav');
-
-        }
-
-
-
+    if( squishyNav.hasClass('shrinkNav') && navHeight >=  scrollTop ){
+      squishyNav.removeClass('shrinkNav');
+      
+    }
 
   })
 
