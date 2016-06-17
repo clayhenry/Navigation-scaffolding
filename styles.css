@@ -180,7 +180,6 @@ a {text-decoration: none}
 
   }
 
-
   .moveYourBodyOff {
     animation-name: moveYourBodyOff;
     animation-duration: 0.3s;
@@ -206,8 +205,6 @@ a {text-decoration: none}
   }
 
 
-
-
   /* Navigation dropdown
   --------------------------------*/
 
@@ -216,7 +213,6 @@ a {text-decoration: none}
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /*padding: 0 0 0 10px;*/
   }
 
   nav .nav-items #NavigationSideBar ul li {
@@ -225,14 +221,14 @@ a {text-decoration: none}
   }
 
   nav .nav-items #NavigationSideBar ul li ul {
-    display: none;
+    visibility: hidden;
     white-space: nowrap;
     padding: 5px 5px 5px 5px;
+    opacity: 0;
 
     border: 1px solid #bebebe;
     border-bottom: 1px solid #b9b9b9;
     background: #fff;
-    /*width: 250px;*/
 
     position: absolute;
     margin: 0px 0 0 -1%;
@@ -240,7 +236,9 @@ a {text-decoration: none}
 
   nav .nav-items #NavigationSideBar ul li:hover ul {
 
-    display: block;
+    visibility: visible;;
+    opacity: 1;
+    transition: all 0.2s
 
   }
 
@@ -304,7 +302,6 @@ a {text-decoration: none}
       animation-name: none;
     }
   }
-
 
   /* Animations */
 

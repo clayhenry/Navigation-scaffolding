@@ -6,6 +6,7 @@ $(document).ready(function(){
   var body = $('body');
   var overlay = $('.overlay');
   var squishyNav = $('nav .nav ');
+  var mainContent = $('.content');
   var navHeight = $('.nav').height();
 
   //----Mobile navigation --//
@@ -37,9 +38,31 @@ $(document).ready(function(){
 
     if( squishyNav.hasClass('shrinkNav') && navHeight >=  scrollTop ){
       squishyNav.removeClass('shrinkNav');
-      
+
     }
 
   })
+
+
+  //------- Search field -------//
+
+  $('.fa.fa-search').on('click', function(){
+
+    if(!squishyNav.hasClass('moveNavVertically')){
+
+      mainContent.addClass('verticalBody')
+      squishyNav.addClass('moveNavVertically');
+      $('#searchText').focus();
+
+    }
+    else {
+      mainContent.removeClass('verticalBody')
+      squishyNav.removeClass('moveNavVertically');
+
+
+    }
+
+  })
+
 
 });
