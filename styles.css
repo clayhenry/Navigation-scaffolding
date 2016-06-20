@@ -30,8 +30,6 @@ a {text-decoration: none}
   margin-top:180px;
   } /* this should  the height of the navigation so the content is not hidden under the fixed nav*/
 
-
-
   .phones {
     position: relative;
   }
@@ -106,8 +104,6 @@ a {text-decoration: none}
     transition: all 0.3s;
   }
 
-
-
   nav .mobile-menu {
     position:fixed;
     top:0;
@@ -116,8 +112,6 @@ a {text-decoration: none}
     width:250px;
     height:100%;
   }
-
-
 
   .search-bar {
     padding:10px 50px;
@@ -139,6 +133,19 @@ a {text-decoration: none}
     display:none;
   }
 
+  nav .secondary-navigation {
+    display: inline-block;
+  }
+  nav .secondary-navigation ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+  }
+  nav .secondary-navigation ul li {
+
+    display: inline;
+    margin: 0 5px;
+  }
 
   .overlay {
     position: fixed;
