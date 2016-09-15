@@ -3,7 +3,7 @@
 A basic navigation scaffold for responsive websites.
 
 Uses: 
-  * Jquery 2.1.1
+  * Jquery 1.12.4 (older browser support)
   * Skeleton CSS framework for responsive grid (optional)
   * font-awesome (optional)
 
